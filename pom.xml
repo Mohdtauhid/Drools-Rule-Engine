@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Drools</groupId>
+	<artifactId>Drools</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Drools</name>
+	<description>Drools</description>
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>11</java.version>
+
+		<rule-admin.version>${project.version}</rule-admin.version>
+		<rule-client.version>${project.version}</rule-client.version>
+		<springfox-swagger2.version>2.6.1</springfox-swagger2.version>
+		<springfox-swagger-ui.version>2.6.1</springfox-swagger-ui.version>
+		<lombok.version>1.18.22</lombok.version>
+
+	</properties>
+
+	<modules>
+		<module>RuleAdmin</module>
+		<module>RuleClient</module>
+	</modules>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.5</version>
+	</parent>
+
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>Drools</groupId>
+				<artifactId>RuleAdmin</artifactId>
+				<version>${rule-admin.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>Drools</groupId>
+				<artifactId>RuleClient</artifactId>
+				<version>${rule-client.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox-swagger2.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox-swagger-ui.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis-reactive -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+			<version>2.6.7</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.11.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<classifier>exe</classifier>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
