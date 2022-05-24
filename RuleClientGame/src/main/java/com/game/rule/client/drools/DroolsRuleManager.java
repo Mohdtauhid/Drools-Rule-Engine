@@ -1,4 +1,7 @@
-package com.rule.client.drools;
+/*
+ *
+ */
+package com.game.rule.client.drools;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -6,7 +9,7 @@ import java.util.Optional;
 
 import org.kie.api.runtime.KieSession;
 
-import com.rule.client.RuleManager;
+import com.game.rule.client.RuleManager;
 
 import lombok.extern.slf4j.Slf4j;
 

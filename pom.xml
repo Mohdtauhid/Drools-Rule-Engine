@@ -17,6 +17,7 @@
 
 		<rule-admin.version>${project.version}</rule-admin.version>
 		<rule-client.version>${project.version}</rule-client.version>
+		<rule-client-game.version>${project.version}</rule-client-game.version>
 		<springfox-swagger2.version>2.6.1</springfox-swagger2.version>
 		<springfox-swagger-ui.version>2.6.1</springfox-swagger-ui.version>
 		<lombok.version>1.18.22</lombok.version>
@@ -26,6 +27,7 @@
 	<modules>
 		<module>RuleAdmin</module>
 		<module>RuleClient</module>
+		<module>RuleClientGame</module>
 	</modules>
 
 	<parent>
@@ -48,6 +50,12 @@
 				<groupId>Drools</groupId>
 				<artifactId>RuleClient</artifactId>
 				<version>${rule-client.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>Drools</groupId>
+				<artifactId>RuleClientGame</artifactId>
+				<version>${rule-client-game.version}</version>
 			</dependency>
 
 		</dependencies>
